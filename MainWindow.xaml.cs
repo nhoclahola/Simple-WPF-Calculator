@@ -41,12 +41,12 @@ namespace Simple_Calculator
             else
                 Small_Screen.Text = "Need clear screen";
         }
-
+        
         private void Sign_Click(object sender, RoutedEventArgs e)
         {
             Button btt = sender as Button;
             string is_minus = btt.Content as string;
-            if (Screen.Text != "")
+            if ((Screen.Text != "" && Screen_Sign.Text == "") || Small_Screen.Text == "Can't divide by 0, change sign")
             {
                 if (Screen_Sign.Text == "")
                 {
@@ -79,7 +79,8 @@ namespace Simple_Calculator
                 {
                     if (Screen.Text == "0")
                     {
-                        Screen.Text = "Cannot divide by 0";
+                        Small_Screen.Text = "Can't divide by 0, change sign";
+                        Screen.Text = "";
                         equal = true;
                         return;
                     }

@@ -67,7 +67,7 @@ namespace Simple_Calculator
 
         private void Equal_Click(object sender, RoutedEventArgs e)
         {
-            if (Screen.Text != "")
+            if (Screen.Text != "" && equal == false)
             {
                 if (sign == "+")
                     number += double.Parse(Screen.Text);
@@ -76,7 +76,15 @@ namespace Simple_Calculator
                 else if (sign == "x")
                     number *= double.Parse(Screen.Text);
                 else if (sign == "/")
+                {
+                    if (Screen.Text == "0")
+                    {
+                        Screen.Text = "Cannot divide by 0";
+                        equal = true;
+                        return;
+                    }
                     number /= double.Parse(Screen.Text);
+                }
                 else
                     number = double.Parse(Screen.Text);
                 Screen.Text = $"{number}";

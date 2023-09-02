@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:Simple_Calculator"
         mc:Ignorable="d"
         SizeToContent="WidthAndHeight"
-        ResizeMode="NoResize"
-        Title="MainWindow">
-    <Grid Width="250" Height="350">
+        ResizeMode="CanMinimize"
+        Title="S-Calculator">
+    <Grid Width="250" Height="350" Background="Gray">
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0"
-                   Text="" TextWrapping="Wrap" 
+                   Text="" TextWrapping="Wrap" FontWeight="Bold"
                    VerticalAlignment="Top" FontSize="20"
                    TextAlignment="Right" Name="Screen"
                    Padding="10" Background="DarkSeaGreen"
